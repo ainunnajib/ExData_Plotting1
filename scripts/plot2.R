@@ -12,9 +12,9 @@ endDate <- as.Date("2007-02-02")
 dt <- dtall[which(as.Date(dtall$Date, "%d/%m/%Y") >= startDate
                   & as.Date(dtall$Date, "%d/%m/%Y") <= endDate),]
 
-#draw plot1
-png(filename = "~/coursera/ExData_Plotting1/plots/plot1.png", width = 480, height = 480, units = "px")
-hist(dt$Global_active_power, main = "Global Active Power", 
-     xlab = "Global Active Power (kilowatts)", ylim = c(0, 1200), 
-     col = "red", breaks = 24)
+#draw plot2
+png(filename = "~/coursera/ExData_Plotting1/plots/plot2.png", width = 480, height = 480, units = "px")
+dt$date.time <- strptime(paste(dt$Date, dt$Time), "%d/%m/%Y %H:%M:%S")
+plot(dt$date.time, dt$Global_active_power, type = "l", 
+     ylab = "Global Active Power (kilowatts)", xlab = "")
 dev.off()
