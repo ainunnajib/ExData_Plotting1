@@ -14,7 +14,9 @@ dt <- dtall[which(as.Date(dtall$Date, "%d/%m/%Y") >= startDate
 
 #draw plot1
 png(filename = "~/coursera/ExData_Plotting1/plots/plot1.png", width = 480, height = 480, units = "px")
+
 hist(dt$Global_active_power, main = "Global Active Power", 
      xlab = "Global Active Power (kilowatts)", ylim = c(0, 1200), 
      col = "red", breaks = 24)
+
 dev.off()
